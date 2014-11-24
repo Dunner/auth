@@ -1,0 +1,226 @@
+
+
+/* -----
+Colors
+----- */
+
+$cTeal = rgba(68,190,192,1)
+$cYellow = rgba(235,201,94,1)
+$cRorange = rgba(232,115,82,1)
+$cRed = rgba(240, 94, 94,1)
+$cLblue = rgba( 173,176,208,1)
+$cLime = rgba(74, 212, 134,1)
+
+$bgDark = #3e3e3e
+$bgLight = #3c3c3c
+$bgPrime = #2c2a29
+$bgSec = #2e2b29
+$bg = #e5e5e5
+$white = #fff
+$chromeWhite = #f2f2f2
+$chromeMellow = #f5f5f5
+$chromeGray = #c9c9c9
+
+color-light = #404f69
+color-medium = #364359
+color-dark = #2c3749
+
+color-background = #2e2e2e
+color-light = #fff
+color-medium = #303838
+color-dark = #324040
+
+color-highlight = rgba(255,255,255,0.2)
+color-shadow = rgba(0,0,0,0.2)
+color-shadow-double = rgba(0,0,0,0.3)
+
+$accent = #3A3C49
+color-deccent-light = #404f69
+color-deccent-medium = #3A3C49
+color-deccent-dark = #2A2C39
+
+
+  /* -----
+  Font-colors
+  ----- */
+
+  .logo
+    line-height 80px
+    text-align center
+    text-shadow -1px 0 rgba(255,255,255,0.3), 0 1px rgba(255,255,255,0.3), 1px 0 rgba(255,255,255,0.3), 0 -1px rgba(255,255,255,0.3)
+
+  .f-white
+    color #f5f5f6
+  .f-black
+    color #000
+  .f-orange
+    color $cRorange
+  .f-yellow
+    color $cYellow
+  .f-lime
+    color $cLime
+  .f-teal
+    color $cTeal
+  /* -----
+  Backgrounds
+  ----- */
+  .bg-dCont
+    background #f3f3f3
+  .bg-cCont
+    background #f6f6f6
+  .bg-orange
+    background $cRorange
+  .bg-yellow
+    background $cYellow
+  .bg-lime
+    background $cLime
+  .bg-teal
+    background $cTeal
+
+
+/* -----
+Misc
+----- */
+
+.cursor
+  cursor pointer
+.link
+  text-decoration underline
+.pad20
+  padding 20px
+.scroll-indicator
+  position absolute
+  left  2px
+  width  8px
+  height 20px
+  background  #333
+
+/* -----
+Sizes
+----- */
+
+.full
+  width 100%
+  height 100%
+  position relative
+  overflow hidden
+
+height-reception = 100px
+height-topbar = 30px
+height-navbar = 70px
+
+
+/* -----
+Positioning
+----- */
+
+.fleft
+  float left
+
+.fright
+  float right
+
+.fcenter
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+
+.text-center
+  text-align center
+
+/* -----
+Buttons
+----- */
+
+button
+  background $cLblue
+  border 0
+  line-height 40px
+  padding 0px 40px
+  border-radius 20px
+  cursor pointer
+  transition all 0.3s ease
+  overflow hidden
+  outline none
+  color white
+  margin 0 auto
+  position relative
+  font-family 'Montserrat', sans-serif
+  font-weight 700
+  &:after
+    content ''
+    position absolute
+    width 200px
+    left -200px
+    top 0px
+    transform skewX(-20deg)
+    background-image linear-gradient(to right,transparent,rgba(#fff,0.4),transparent)
+    height 50px
+  &:hover:after
+    animation shine .5s ease
+
+@keyframes shine
+  100%
+    left 200px
+
+/* -----
+Columns
+----- */
+
+ul.double
+  width 100%
+  position relative
+  margin-bottom 20px
+  padding 0 20px
+  & li
+    width calc(50% - 10px)
+    float left
+    position relative
+    margin-left 20px
+    overflow hidden
+    &:first-child
+      margin-left 0px
+  &:after
+    content ''
+    display block
+    clear both
+
+ul.tripple
+  width 100%
+  position relative
+  margin-bottom 20px
+  padding 0 20px
+  & li
+    width calc(33.333% - 20px)
+    float left
+    position relative
+    margin-left 20px
+    overflow hidden
+    &:first-child
+      width 33.333%
+      margin-left 0px
+  &:after
+    content ''
+    display block
+    clear both
+
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon
+  width 1em
+  height 1em
+
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect
+  fill #4691f6
+
+
+.svg-icon circle
+  stroke #4691f6
+  stroke-width 1

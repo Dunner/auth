@@ -1,0 +1,95 @@
+
+
+<div class="bg-dCont f-white" style="margin-top:40px" ng-controller="CharacterCtrl">
+
+  <ul class="charEdit">
+    <li>
+      <svg dnr-charactercreator width="80%" height-"100%" viewBox="0 0 744 1052" id="charEdit"></svg>
+      <div class="colors">
+        <button class="testbtn" style="position:Absolute; bottom:110%; left: 10%; width:80%; height:50px; line-height:50px" ng-click="save()"><h3>save</h3></button>
+        <ul class="colorSwap">
+          <li ng-repeat="color in colors[palette]"
+              ng-style="{ 'background' : color}"
+              ng-click="changeColor(toEdit, color, inventoryOption)"
+              >
+          </li>
+        </ul>
+        <div id="colorPick" style="position: relative">
+          <div colorpicker type="text" ng-model="specificColor" colorpicker-parent="true"></div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="controls">
+        <nav class="options toprow">
+          <ul>
+            <li ng-repeat="item in optionsTree | toArray | orderBy : 'item.index'" ng-click="changeOption(item.$key);" ng-class="{'active': option === item.$key}"><a>{{item.$key}}</a></li>
+          </ul>
+        </nav>
+        <nav class="options botrow">
+          <ul>
+            <li ng-repeat="item in optionsTree[option].options | toArray | orderBy : 'item.index'" ng-click="changeEdit(item.$key);" ng-class="{'active': edit === item.$key}"><a>{{item.$key}}</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="inventory">
+        <div class="itemWrapper" ng-click="updateDoll(option, edit, inventoryOption[0], '')" ng-show="optionsTree[option].options[edit].removeable">
+          <svg viewBox="0 0 744 1052" id="invEdit"></svg>
+        </div>
+        <div class="itemWrapper" ng-repeat="item in inventory" ng-click="updateDoll(option, edit, inventoryOption[0], item.name)" ng-class="{'active': paperdoll[optionsTree[option].options[edit].select[0]].name === item.name}">
+          <svg dnr-characteritem="{{$index}}" viewBox="0 0 744 1052" id="invEdit"></svg>
+          <h6 class="text-center">{{item.name}}</h6>
+        </div>
+      </div>
+      <!-- <div ng-click="updateDoll('hair', 'bowl2')">new hair</div> -->
+    </li>
+  </ul>
+</div>
+
+<ul class="double" style="margin-top:40px">
+  <li>
+    <div class="bg-dCont pad20 f-white">
+      <div class="bg-cCont f-white" style="height:40px">
+        <h5 style="line-height: 40px; text-align: center">Settings</h5>
+      </div>
+
+
+
+      <div class="login">
+        <form class="form" name="form" ng-submit="changeUsername(form)" novalidate>
+
+        <ul class="double">
+          <li>
+            <h5>Name</h5>
+          </li>
+          <li>
+            <input type="text" name="name" ng-model="cUser.public.name"
+                   placeholder="Username"
+                   required/>
+            <p class="help-block" ng-show="form.name.$error.required && submitted">
+              A name is required
+            </p>
+            <p class="help-block" ng-show="form.name.$error.name && submitted">
+              Doesn't look like a valid name.
+            </p>
+            <p class="help-block" ng-show="form.name.$error.required && submitted">
+              What's your name?
+            </p>
+            <p class="help-block" ng-show="form.name.$error.mongoose">
+              {{ errors.name }}
+            </p>
+          </li>
+
+          <h7>site/users/{{cUser.public.name | slug}}</h7>
+          <button type="submit">Change name</button>
+
+        </form>
+      </div>
+
+
+    </div>
+  </li>
+  <li>
+  </li>
+</ul>
+
