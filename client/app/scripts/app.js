@@ -18,7 +18,6 @@ angular
     'ngResource',
     'ngSanitize',
     'ngTouch',
-    'colorpicker.module',
 
     'btford.socket-io'
   ])
@@ -82,16 +81,6 @@ angular
         url: '/overview',
         templateUrl: 'views/overview.html',
         controller: 'OverviewCtrl'
-      })
-      .state('social.profile', {
-        url: '/profile',
-        templateUrl: 'views/profile.html',
-        controller: 'ProfileCtrl'
-      })
-      .state('social.settings', {
-        url: '/settings',
-        templateUrl: 'views/settings.html',
-        controller: 'SettingsCtrl'
       })
       .state('social.users', {
         url: '/users',

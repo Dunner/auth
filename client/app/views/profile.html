@@ -1,9 +1,34 @@
-<div class="dnr-slate-content">
-  {{cUser.local.email}}
+
+
+
+
+
+<h5 style="line-height: 40px; text-align: center">Profile</h5>
+
+<div class="login">
+  <form class="form" name="form" ng-submit="changeUsername(form)" novalidate>
+
+    <h5>Name</h5>
+    <input type="text" name="name" ng-model="cUser.public.name"
+           placeholder="Username"
+           required/>
+    <p class="help-block" ng-show="form.name.$error.required && submitted">
+      A name is required
+    </p>
+    <p class="help-block" ng-show="form.name.$error.name && submitted">
+      Doesn't look like a valid name.
+    </p>
+    <p class="help-block" ng-show="form.name.$error.required && submitted">
+      What's your name?
+    </p>
+    <p class="help-block" ng-show="form.name.$error.mongoose">
+      {{ errors.name }}
+    </p>
+
+    <!--<h7>site/users/{{cUser.public.name | slug}}</h7>-->
+    <button type="submit">Change name</button>
+
+  </form>
+  <h5><a class="cursor" ui-sref="signin">Logout</a></h5>
 </div>
 
-<div style="height:2000px"></div>
-
-<div class="dnr-slate-content">
-  {{cUser.local.email}}
-</div>

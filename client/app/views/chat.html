@@ -1,0 +1,18 @@
+
+<div class="dnr-chat">
+  <div class="dnr-chat-messages">
+    <div class="dnr-chat-message" ng-repeat="item in todos.slice().reverse() | orderBy:'createdAt'" style="height:auto; min-height: 20px">
+      <h6 style="line-height:25px; margin-bottom:0px!important; text-align: left;">
+        <span>name {{item.createdAt | date:"'@' h:mm a"}}:</span>
+        {{item.title}}
+      </h6> <!-- {{item.completed}} {{item.createdAt | date:"MM/dd/yyyy 'at' h:mma"}}-->
+    </div>
+  </div>
+  <div class="dnr-chat-input">
+    <form id="todo-form" ng-submit="addTodo(newTodo)">
+      <input type="text"  id="new-todo" placeholder="Send a message" ng-model="newTodo" autofocus="">
+      <button type="submit"><h5>Send</h5></button>
+      <div style="clear:both"></div>
+    </form>
+  </div>
+</div>

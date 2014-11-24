@@ -1,18 +1,3 @@
-//
-// Imports
-//
-
-@import 'reset.css'
-@import 'utils.styl'
-@import 'forms.styl'
-@import 'dunnerbox.styl'
-@import 'social.styl'
-@import 'sidefeed.styl'
-@import 'titlenav.styl'
-@import 'navigation.styl'
-@import 'chareditor.styl'
-@import 'animations.styl'
-@import 'responsive.styl'
 
 //
 // Typographic
@@ -66,4 +51,47 @@ a
   color black
 
 
+/* -----
+Columns
+----- */
 
+ul.double
+  width 100%
+  position relative
+  margin-bottom 20px
+  padding 0 20px
+  & li
+    width calc(50% - 10px)
+    float left
+    position relative
+    margin-left 20px
+    overflow hidden
+    &:first-child
+      margin-left 0px
+  &:after
+    content ''
+    display block
+    clear both
+
+ul.tripple
+  width 100%
+  position relative
+  margin-bottom 20px
+  padding 0 20px
+  & li
+    width calc(33.333% - 20px)
+    float left
+    position relative
+    margin-left 20px
+    overflow hidden
+    &:first-child
+      width 33.333%
+      margin-left 0px
+  &:after
+    content ''
+    display block
+    clear both
+
+
+.cursor 
+  cursor pointer
